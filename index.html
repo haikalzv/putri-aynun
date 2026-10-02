@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>25 Tahun Aynun 🥳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader">
+    <svg class="preloader-ring" viewBox="0 0 100 100">
+      <circle class="preloader-track" cx="50" cy="50" r="44"></circle>
+      <circle class="preloader-fill" id="preloaderFill" cx="50" cy="50" r="44"></circle>
+    </svg>
+    <span class="preloader-num" id="preloaderNum">0</span>
+  </div>
+
+  <!-- ============ PROGRESS BAR ============ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ MUSIK LATAR ============ -->
+  <!-- Taruh file musik pilihanmu di folder yang sama, lalu ganti "lagu.mp3"
+       di bawah ini dengan nama file musikmu (boleh .mp3, .ogg, atau .wav) -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="Ellie Goulding - Love Me Like You Do.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-toggle" id="musicToggle" aria-label="Putar musik">🎵</button>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <a href="#beranda" class="navbar-brand">Aynun<span>.25</span></a>
+    <nav class="navbar-links" id="navLinks"></nav>
+    <button class="navbar-toggle" id="navToggle" aria-label="Buka menu">☰</button>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="beranda">
+    <canvas class="hero-particles" id="particleCanvas"></canvas>
+    <div class="hero-glow"></div>
+    <span class="hero-watermark">25</span>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow" id="heroEyebrow"></p>
+      <h1 class="hero-title">
+        Selamat Ulang Tahun<br>
+        <span class="hero-name" id="heroName"></span>
+      </h1>
+      <p class="hero-tagline" id="heroTagline"></p>
+
+      <div class="hero-counter">
+        <span class="hero-counter-num" id="ageCounter">0</span>
+        <span class="hero-counter-label">tahun yang penuh cerita</span>
+      </div>
+
+      <a href="#perjalanan" class="hero-cta">
+        <span>Jelajahi Perjalanannya</span>
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div class="stats-grid" id="statsGrid"></div>
+  </section>
+
+  <!-- ============ PERJALANAN / TIMELINE ============ -->
+  <section class="timeline-section" id="perjalanan">
+    <div class="section-head reveal">
+      <span class="section-index">01 / 05</span>
+      <p class="kicker">rekam jejak</p>
+      <h2 class="section-title">Perjalanan Kita</h2>
+    </div>
+    <div class="timeline" id="timelineList">
+      <div class="timeline-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ 25 ALASAN ============ -->
+  <section class="reasons-section" id="alasan">
+    <div class="section-head reveal">
+      <span class="section-index">02 / 05</span>
+      <p class="kicker">daftar cinta</p>
+      <h2 class="section-title">25 kata-kata buat bby</h2>
+    </div>
+    <div class="reasons-grid" id="reasonsGrid"></div>
+  </section>
+
+  <!-- ============ GALERI ============ -->
+  <section class="gallery-section" id="galeri">
+    <div class="section-head reveal">
+      <span class="section-index">03 / 05</span>
+      <p class="kicker">galeri</p>
+      <h2 class="section-title">Foto-Foto bby yang cantik</h2>
+      <p class="section-sub">semoga kamu suka yaa sama foto yg aku pilihin hehehe</p>
+    </div>
+    <div class="masonry reveal" id="galleryGrid"></div>
+  </section>
+
+  <!-- ============ SURAT / AMPLOP ============ -->
+  <section class="letter-section reveal" id="surat">
+    <div class="section-head">
+      <span class="section-index">04 / 05</span>
+      <p class="kicker">satu hal lagi</p>
+      <h2 class="section-title">Ada surat kecil untuk kamu bby</h2>
+      <p class="section-sub">klik amplopnya yaa</p>
+    </div>
+
+    <div class="envelope-wrap">
+      <button class="envelope" id="envelope" aria-label="Buka surat">
+        <span class="envelope-seal">💖</span>
+        <span class="envelope-flap"></span>
+        <span class="envelope-body"></span>
+        <span class="envelope-hint">ketuk untuk membuka</span>
+      </button>
+      <div class="letter" id="letterCard"></div>
+    </div>
+  </section>
+
+  <!-- ============ HARAPAN UNTUK TAHUN INI ============ -->
+  <section class="wishes-section" id="harapan">
+    <div class="section-head reveal">
+      <span class="section-index">05 / 05</span>
+      <p class="kicker">untuk 25 tahun bby</p>
+      <h2 class="section-title">Harapanku Untuk bby</h2>
+      <p class="section-sub">beberapa doa kecil dari aku</p>
+    </div>
+    <div class="wishes-grid" id="wishesGrid"></div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p class="footer-brand">Aynun<span>.25</span></p>
+    <p>dibuat dengan 💖 untuk pacarku yang cantiikk</p>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-arrow lightbox-prev" aria-label="Sebelumnya">‹</button>
+    <img id="lightbox-img" src="" alt="Foto diperbesar">
+    <button class="lightbox-arrow lightbox-next" aria-label="Berikutnya">›</button>
+    <button class="lightbox-close" aria-label="Tutup">✕</button>
+  </div>
+
+  <!-- ============ FAB KEJUTAN ============ -->
+  <button class="fab" id="fabSurprise" aria-label="Kasih kejutan">✨</button>
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
